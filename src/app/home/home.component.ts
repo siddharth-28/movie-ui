@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   upcoming_movies: any;
   search_result: any;
   movie: any;
+  added_result: any;
 
   constructor(public movieService: MovieService) {
     // get upcoming movies
@@ -34,7 +35,12 @@ export class HomeComponent implements OnInit {
       // console.log(this.search_result);
     });
   }
+    saveMovies() {
+      this.movieService.saveMovie(this.movie).subscribe(data => {
+      this.added_result = data['results'];
+      });
 
+  }
   ngOnInit() {
   }
 

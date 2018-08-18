@@ -1,9 +1,12 @@
+import { Movie } from './movie';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable()
 export class MovieService {
-
+  private post_url = 'https://localhost:8070/api/v1/save/movie';
   private movie_url = 'https://api.themoviedb.org/3/';
   private api_key = '19ab98ad55324f2be9a19b5ca671c97b';
   private movie_string: string;
@@ -26,6 +29,10 @@ export class MovieService {
 
   getMovie(id: number) {
     return this._http.get(this.movie_url + 'movie/' + id + '?api_key=' + this.api_key);
+  }
+  saveMovie(movie: string): Observable<Movie> {
+    // let options = new RequestOptions({ headers: headers });
+    return this._http.post<Movie>(this.post_url, movie);
   }
 
 }

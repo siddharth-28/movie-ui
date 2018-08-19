@@ -1,3 +1,17 @@
-<p>
-  wishlist works!
-</p>
+<div class="row">
+    <div  class="col-sm-4" *ngFor="let movie of movieList; let i = index">
+      <div *ngIf="i < 9">
+        <div class="card mt-3 mb-3">
+          <div class="card-header text-center">
+            {{ movie.releaseYear | date:'mediumDate' }}
+          </div>
+          <div class="card-body">
+            <img class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w500/{{ movie.moviePoster }}" alt="{{ movie.movieTitle }}" style="height: 460px">
+            <p class="text-center">{{ movie.movieTitle }}</p>
+            <a routerLink="/movie/{{ movie.movieId }}" href="#" class="btn btn-block btn-info">Movie Details</a>
+            <button class="btn-block btn-danger" (click)="onWorking(movie.movieId)" >Delete Movie</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

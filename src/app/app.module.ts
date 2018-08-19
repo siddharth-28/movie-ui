@@ -14,7 +14,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'movie/:movieID', component: MovieComponent },
-  { path: 'wishlist/:movieID', component: WishlistComponent}
+  { path: 'wishlist/:movieID', component: WishlistComponent},
+  { path: 'wishlist', component: WishlistComponent}
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@ export class Movie {
      public movieTitle: string,
      public releaseYear: string,
      public movieId: string,
-     public poster: string,
+     public moviePoster: string,
      public movieRating: string
     ) {}
 }

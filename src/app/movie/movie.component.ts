@@ -1,3 +1,4 @@
+import { Movie } from './../movie';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -10,6 +11,8 @@ import { MovieService } from '../movie.service';
 })
 export class MovieComponent implements OnInit {
   movie: any;
+  public movieTitle = '';
+  mov = new Movie('', '', '', '', '');
   constructor(private router: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit() {
@@ -21,5 +24,13 @@ export class MovieComponent implements OnInit {
       });
     });
   }
+  saveMovie(movie) {
+    this.mov.movieTitle = movie.title;
+    this.mov.movieId = movie.id;
+    this.mov.movieRating  = movie.vote_average;
+    this.mov.releaseYear = movie.release_date;
+    this.mov.moviePoster = movie.poster_path;
+    this.movieService.saveMovie(this.mov).subscribe(res => console.log('Done'));
+}
 
 }

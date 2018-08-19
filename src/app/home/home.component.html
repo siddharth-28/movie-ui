@@ -45,7 +45,7 @@
               style="height: 460px">
             <p class="text-center">{{ movie.original_title }}</p>
             <a routerLink="/movie/{{ movie.id }}" href="#" class="btn btn-block btn-info">Movie Details</a>
-            <a routerLink="/wishlist/{{movie.id}}" href="#" class="btn btn-block btn-danger" (click)="saveMovies()">Add to cart</a>
+           
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
               style="height: 460px">
             <p class="text-center">{{ upcoming.original_title }}</p>
             <a routerLink="/movie/{{ upcoming.id }}" href="#" class="btn btn-block btn-info">Movie Details</a>
-            <a routerLink="/wishlist/{{upcoming.id}}" href="#" class="btn btn-block btn-danger" (click)="saveMovies()">Add to cart</a>
+           
           </div>
         </div>
       </div>
@@ -99,7 +99,6 @@
               style="height: 460px">
             <p class="text-center">{{ popular.original_title }}</p>
             <a routerLink="/movie/{{ popular.id }}" href="#" class="btn btn-block btn-info">Movie Details</a>
-            <a routerLink="/wishlist/{{popular.id}}" href="#" class="btn btn-block btn-danger">Add to cart</a>
           </div>
         </div>
       </div>
